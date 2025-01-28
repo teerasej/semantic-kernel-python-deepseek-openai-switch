@@ -6,10 +6,20 @@ This project is a simple example of how to use the OpenAI API to generate text u
 
 Create a `.env` file in the root directory of your project with the following content:
 
+### OpenAI's environment variables
+
 ```
 API_KEY=
 MODEL_ID=gpt-3.5-turbo
 SERVICE_URI=https://api.openai.com/v1
+```
+
+### Deep Seek's environment variables
+
+```
+API_KEY=
+MODEL_ID=deepseek-chat
+SERVICE_URI=https://api.deepseek.com
 ```
 
 ## Install the dependencies
@@ -23,4 +33,6 @@ pip install -r requirements.txt
 ```bash
 python app.py
 ```
+
+## 
 
