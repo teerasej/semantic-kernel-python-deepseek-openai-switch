@@ -8,6 +8,8 @@ from semantic_kernel.connectors.ai.open_ai import (
     OpenAIChatPromptExecutionSettings
 )
 from semantic_kernel.contents.chat_history import ChatHistory
+from semantic_kernel.contents.utils.author_role import AuthorRole
+from semantic_kernel.contents import ChatMessageContent
 
 # Load environment variables from .env file
 load_dotenv()
@@ -51,7 +53,13 @@ async def main():
         print(f"Assistant: {ai_response}")
 
         # Add AI response to chat history
-        # chat_history.add_assistant_message(ai_response)
+        chat_history.add_message(
+            ChatMessageContent(
+                role=AuthorRole.ASSISTANT,
+                name="Assistant",
+                inner_content=ai_response
+            )
+        )
 
 if __name__ == "__main__":
     asyncio.run(main())
